@@ -15,7 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
-    
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     //MARK: Properties
     var weatherManager = WeatherDataManager()
@@ -82,6 +82,14 @@ extension WeatherViewController: WeatherManagerDelegate {
             temperatureLabel.text = weatherModel.temperatureString
             cityLabel.text = weatherModel.cityName
             self.conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
+            
+            if weatherModel.cityName == "Tokyo" {
+                //Tokyoの場合、夕暮れの背景
+                backgroundImageView.image = UIImage(named: "darkBackground")
+            } else {
+                //Tokyoでない場合、デフォルト背景
+                backgroundImageView.image = UIImage(named: "background")
+            }
         }
     }
     
