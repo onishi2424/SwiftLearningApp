@@ -90,6 +90,9 @@ extension WeatherViewController: WeatherManagerDelegate {
                 //Tokyoでない場合、デフォルト背景
                 backgroundImageView.image = UIImage(named: "background")
             }
+            
+            //コンソールにログを出力する
+            print("action: search, city: \(weatherModel.cityName)")
         }
     }
     
