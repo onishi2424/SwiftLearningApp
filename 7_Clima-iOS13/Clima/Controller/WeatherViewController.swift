@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
+    
     //MARK: Properties
     var weatherManager = WeatherDataManager()
     let locationManager = CLLocationManager()
@@ -28,7 +29,17 @@ class WeatherViewController: UIViewController {
         weatherManager.delegate = self
         searchField.delegate = self
     }
-
+    
+    @IBAction func tappedFavoriteButton(_ sender: UIButton) {
+        
+        let favoriteVC = ThirdViewController(nibName: "ThirdViewController",
+                                                bundle: nil)
+//        let favoriteVC = FavoriteViewController(nibName: "FavoriteViewController",
+//                                                bundle: nil)
+        
+        navigationController?.pushViewController(favoriteVC, animated: true)
+    }
+    
 
 }
  
