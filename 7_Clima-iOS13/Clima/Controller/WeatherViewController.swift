@@ -28,14 +28,34 @@ class WeatherViewController: UIViewController {
         locationManager.delegate = self
         weatherManager.delegate = self
         searchField.delegate = self
+        
+        // 次の画面のBackボタンを「戻る」に変更
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:  "",
+                                                                style:  .plain,
+                                                                target: nil,
+                                                                action: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // UINavigationBarの透明化設定
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground() // 背景を透明に
+        appearance.backgroundColor = .clear // 背景色をクリアに設定
+        appearance.shadowColor = .clear // シャドウをクリアに設定
+        self.navigationItem.hidesBackButton = false
+
+        // 現在のナビゲーションバーに反映
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
     }
     
     @IBAction func tappedFavoriteButton(_ sender: UIButton) {
         
-        let favoriteVC = ThirdViewController(nibName: "ThirdViewController",
+        let favoriteVC = FavoriteViewController(nibName: "FavoriteViewController",
                                                 bundle: nil)
-//        let favoriteVC = FavoriteViewController(nibName: "FavoriteViewController",
-//                                                bundle: nil)
         
         navigationController?.pushViewController(favoriteVC, animated: true)
     }

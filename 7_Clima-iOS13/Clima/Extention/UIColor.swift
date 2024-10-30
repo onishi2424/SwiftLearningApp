@@ -6,4 +6,8 @@
 //  Copyright © 2024 App Brewery. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIColor {
+    static let navigationHeaderColor = UIColor.init(named: "NavigationHeaderColor")!
+}
