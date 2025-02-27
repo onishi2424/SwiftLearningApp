@@ -15,11 +15,13 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var jokeLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     
     //MARK: Properties
     var weatherManager = WeatherDataManager()
+    var jokeManeger = JokeDataManater()
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -27,6 +29,7 @@ class WeatherViewController: UIViewController {
         
         locationManager.delegate = self
         weatherManager.delegate = self
+        jokeManeger.delegate = self
         searchField.delegate = self
         
         // 次の画面のBackボタンを「戻る」に変更
@@ -34,6 +37,7 @@ class WeatherViewController: UIViewController {
                                                                 style:  .plain,
                                                                 target: nil,
                                                                 action: nil)
+        jokeLabel.text = "Dad Jokをタップ！"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +64,9 @@ class WeatherViewController: UIViewController {
         navigationController?.pushViewController(favoriteVC, animated: true)
     }
     
-
+    @IBAction func tappedJokeButton(_ sender: UIButton) {
+        jokeManeger.performRequest(url: jokeManeger.baseURL)
+    }
 }
  
 //MARK:- TextField extension
@@ -129,6 +135,14 @@ extension WeatherViewController: WeatherManagerDelegate {
     
     func failedWithError(error: Error){
         print(error)
+    }
+}
+
+extension WeatherViewController: JokeManagerDelegate {
+    func updateJoke(jokeModel: JokeModel){
+        DispatchQueue.main.async {
+            self.jokeLabel.text = jokeModel.joke
+        }
     }
 }
 

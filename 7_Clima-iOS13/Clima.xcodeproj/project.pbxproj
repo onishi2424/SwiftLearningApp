@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		749DDF142D31017A00F18551 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF132D31017300F18551 /* APIService.swift */; };
+		749DDF1D2D3110FA00F18551 /* JokeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF1C2D3110EC00F18551 /* JokeDataManager.swift */; };
+		749DDF1F2D3111CC00F18551 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF1E2D3111C300F18551 /* JokeModel.swift */; };
+		749DDF212D3112EE00F18551 /* JokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF202D3112E700F18551 /* JokeData.swift */; };
+		749DDF2A2D31228300F18551 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF282D31228300F18551 /* CityTableViewCell.swift */; };
+		749DDF2B2D31228300F18551 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749DDF292D31228300F18551 /* CityTableViewCell.xib */; };
+		749DDF322D392B6800F18551 /* CityWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749DDF312D392B6800F18551 /* CityWeatherViewController.xib */; };
+		749DDF332D392B6800F18551 /* CityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF302D392B6800F18551 /* CityWeatherViewController.swift */; };
+		749DDF372D39336D00F18551 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF362D39336A00F18551 /* Struct.swift */; };
 		74AD0E282CC1D896000AC934 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD0E262CC1D896000AC934 /* FavoriteViewController.swift */; };
 		74AD0E292CC1D896000AC934 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74AD0E272CC1D896000AC934 /* FavoriteViewController.xib */; };
 		74AD0E2C2CC1E040000AC934 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD0E2B2CC1E040000AC934 /* ColorUtil.swift */; };
@@ -26,6 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		749DDF132D31017300F18551 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		749DDF1C2D3110EC00F18551 /* JokeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDataManager.swift; sourceTree = "<group>"; };
+		749DDF1E2D3111C300F18551 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		749DDF202D3112E700F18551 /* JokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeData.swift; sourceTree = "<group>"; };
+		749DDF282D31228300F18551 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		749DDF292D31228300F18551 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		749DDF302D392B6800F18551 /* CityWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherViewController.swift; sourceTree = "<group>"; };
+		749DDF312D392B6800F18551 /* CityWeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityWeatherViewController.xib; sourceTree = "<group>"; };
+		749DDF362D39336A00F18551 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		74AD0E262CC1D896000AC934 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		74AD0E272CC1D896000AC934 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		74AD0E2B2CC1E040000AC934 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
@@ -57,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		749DDF102D31014E00F18551 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				749DDF132D31017300F18551 /* APIService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		749DDF152D31024B00F18551 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				749DDF362D39336A00F18551 /* Struct.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		74AD0E2A2CC1E019000AC934 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +127,8 @@
 		ADAA27AF231BBFAF00365194 /* Clima */ = {
 			isa = PBXGroup;
 			children = (
+				749DDF152D31024B00F18551 /* Struct */,
+				749DDF102D31014E00F18551 /* APIService */,
 				74AD0E2D2CD2564D000AC934 /* Extention */,
 				74AD0E2A2CC1E019000AC934 /* Util */,
 				ADAA27B0231BBFAF00365194 /* AppDelegate.swift */,
@@ -123,6 +159,10 @@
 				ADAA27B6231BBFAF00365194 /* Main.storyboard */,
 				74AD0E262CC1D896000AC934 /* FavoriteViewController.swift */,
 				74AD0E272CC1D896000AC934 /* FavoriteViewController.xib */,
+				749DDF282D31228300F18551 /* CityTableViewCell.swift */,
+				749DDF292D31228300F18551 /* CityTableViewCell.xib */,
+				749DDF302D392B6800F18551 /* CityWeatherViewController.swift */,
+				749DDF312D392B6800F18551 /* CityWeatherViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +170,9 @@
 		ADAA27CA231BC3FA00365194 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				749DDF1C2D3110EC00F18551 /* JokeDataManager.swift */,
+				749DDF202D3112E700F18551 /* JokeData.swift */,
+				749DDF1E2D3111C300F18551 /* JokeModel.swift */,
 				7D64259524473AE800F1DD90 /* WeatherDataManager.swift */,
 				7D6425972451AEA500F1DD90 /* WeatherData.swift */,
 				7DB97A2B24585AB800C3BB03 /* WeatherModel.swift */,
@@ -197,10 +240,12 @@
 			files = (
 				ADAA27CE231BC87F00365194 /* README.md in Resources */,
 				ADAA27C7231BC02C00365194 /* dark_background.pdf in Resources */,
+				749DDF322D392B6800F18551 /* CityWeatherViewController.xib in Resources */,
 				ADAA27BD231BBFB300365194 /* LaunchScreen.storyboard in Resources */,
 				74AD0E292CC1D896000AC934 /* FavoriteViewController.xib in Resources */,
 				ADAA27BA231BBFB300365194 /* Assets.xcassets in Resources */,
 				ADAA27B8231BBFAF00365194 /* Main.storyboard in Resources */,
+				749DDF2B2D31228300F18551 /* CityTableViewCell.xib in Resources */,
 				ADAA27C6231BC02C00365194 /* light_background.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,15 +257,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749DDF332D392B6800F18551 /* CityWeatherViewController.swift in Sources */,
 				7D64259624473AE800F1DD90 /* WeatherDataManager.swift in Sources */,
 				7D6425982451AEA500F1DD90 /* WeatherData.swift in Sources */,
+				749DDF1F2D3111CC00F18551 /* JokeModel.swift in Sources */,
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
 				74AD0E282CC1D896000AC934 /* FavoriteViewController.swift in Sources */,
 				74AD0E2F2CD2567F000AC934 /* UIColor.swift in Sources */,
+				749DDF212D3112EE00F18551 /* JokeData.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
+				749DDF2A2D31228300F18551 /* CityTableViewCell.swift in Sources */,
+				749DDF142D31017A00F18551 /* APIService.swift in Sources */,
 				7DB97A2C24585AB800C3BB03 /* WeatherModel.swift in Sources */,
+				749DDF372D39336D00F18551 /* Struct.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,
 				74AD0E2C2CC1E040000AC934 /* ColorUtil.swift in Sources */,
+				749DDF1D2D3110FA00F18551 /* JokeDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CSW6UY5DJ;
+				DEVELOPMENT_TEAM = VW892QYQ2A;
 				INFOPLIST_FILE = Clima/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,7 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CSW6UY5DJ;
+				DEVELOPMENT_TEAM = VW892QYQ2A;
 				INFOPLIST_FILE = Clima/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
