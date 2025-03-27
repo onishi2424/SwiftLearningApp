@@ -15,30 +15,23 @@ class CityWeatherViewController: UIViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     
     var cityName: CityName?
-    var weatherManager = WeatherDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        weatherManager.delegate = self
         if let cityName = cityName {
             self.navigationItem.title = cityName.jpName
-            weatherManager.fetchWeather(cityName.enName)
+            ModelService.shared.cityModel.callCity(q: cityName.enName) { result, error in
+                if error != nil || result == nil {
+                    return
+                }
+                
+                if result!.conditionName != nil {
+                    self.weatherImage.image = UIImage(systemName: result!.conditionName!)
+                }
+                self.tempratureLabel.text = result!.temperatureString
+                self.cityNameLabel.text = result!.cityName
+            }
         }
-    }
-}
-
-extension CityWeatherViewController: WeatherManagerDelegate {
-
-    func updateWeather(weatherModel: WeatherModel){
-        DispatchQueue.main.sync {
-            self.weatherImage.image = UIImage(systemName: weatherModel.conditionName)
-            tempratureLabel.text = weatherModel.temperatureString
-            cityNameLabel.text = weatherModel.cityName
-        }
-    }
-    
-    func failedWithError(error: any Error) {
-        print(error)
     }
 }

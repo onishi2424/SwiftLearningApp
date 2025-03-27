@@ -20,16 +20,16 @@ class WeatherViewController: UIViewController {
     
     
     //MARK: Properties
-    var weatherManager = WeatherDataManager()
-    var jokeManeger = JokeDataManater()
+//    var weatherManager = WeatherDataManager()
+//    var jokeManeger = JokeDataManater()
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
-        weatherManager.delegate = self
-        jokeManeger.delegate = self
+//        weatherManager.delegate = self
+//        jokeManeger.delegate = self
         searchField.delegate = self
         
         // 次の画面のBackボタンを「戻る」に変更
@@ -65,7 +65,14 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func tappedJokeButton(_ sender: UIButton) {
-        jokeManeger.performRequest(url: jokeManeger.baseURL)
+        ModelService.shared.jokeModel.callJoke2() { result, error in
+            if error != nil || result == nil {
+                self.jokeLabel.text = ""
+                return
+            }
+            
+            self.jokeLabel.text = result!.joke
+        }
     }
 }
  
@@ -76,12 +83,52 @@ extension WeatherViewController: UITextFieldDelegate {
             searchField.endEditing(true)    //dismiss keyboard
             print(searchField.text!)
             
-            searchWeather()
+            guard let cityName = searchField.text else { return }
+            
+            self.updateCityWeather(cityName: cityName)
         }
     
-        func searchWeather(){
-            if let cityName = searchField.text{
-                weatherManager.fetchWeather(cityName)
+        func updateCityWeather(cityName: String) {
+            ModelService.shared.cityModel.callCity(q: cityName){ result, error in
+                if error != nil || result == nil {
+                    return
+                }
+                
+                self.temperatureLabel.text = result!.temperatureString
+                self.cityLabel.text = result!.cityName
+                if let conditionName = result!.conditionName {
+                    self.conditionImageView.image = UIImage(systemName: conditionName)
+                }
+                
+                if result!.cityName == "Tokyo" {
+                    //Tokyoの場合、夕暮れの背景
+                    self.backgroundImageView.image = UIImage(named: "darkBackground")
+                } else {
+                    //Tokyoでない場合、デフォルト背景
+                    self.backgroundImageView.image = UIImage(named: "background")
+                }
+                //コンソールにログを出力する
+                print("action: search, city: \(result!.cityName ?? "")")
+            }
+        }
+    
+        func updateLocalWeather(lat: Double, lon: Double) {
+            ModelService.shared.localModel.callLocal(lat: lat, lon: lon) { result, error in
+                self.temperatureLabel.text = result!.temperatureString
+                self.cityLabel.text = result!.cityName
+                if let conditionName = result!.conditionName {
+                    self.conditionImageView.image = UIImage(systemName: conditionName)
+                }
+                
+                if result!.cityName == "Tokyo" {
+                    //Tokyoの場合、夕暮れの背景
+                    self.backgroundImageView.image = UIImage(named: "darkBackground")
+                } else {
+                    //Tokyoでない場合、デフォルト背景
+                    self.backgroundImageView.image = UIImage(named: "background")
+                }
+                //コンソールにログを出力する
+                print("action: search, city: \( result!.cityName ?? "")")
             }
         }
         
@@ -90,7 +137,7 @@ extension WeatherViewController: UITextFieldDelegate {
             searchField.endEditing(true)    //dismiss keyboard
             print(searchField.text!)
             
-            searchWeather()
+            updateCityWeather(cityName: searchField.text ?? "")
             return true
         }
         
@@ -111,41 +158,6 @@ extension WeatherViewController: UITextFieldDelegate {
         }
 }
 
-//MARK:- View update extension
-extension WeatherViewController: WeatherManagerDelegate {
-    
-    func updateWeather(weatherModel: WeatherModel){
-        DispatchQueue.main.sync {
-            temperatureLabel.text = weatherModel.temperatureString
-            cityLabel.text = weatherModel.cityName
-            self.conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
-            
-            if weatherModel.cityName == "Tokyo" {
-                //Tokyoの場合、夕暮れの背景
-                backgroundImageView.image = UIImage(named: "darkBackground")
-            } else {
-                //Tokyoでない場合、デフォルト背景
-                backgroundImageView.image = UIImage(named: "background")
-            }
-            
-            //コンソールにログを出力する
-            print("action: search, city: \(weatherModel.cityName)")
-        }
-    }
-    
-    func failedWithError(error: Error){
-        print(error)
-    }
-}
-
-extension WeatherViewController: JokeManagerDelegate {
-    func updateJoke(jokeModel: JokeModel){
-        DispatchQueue.main.async {
-            self.jokeLabel.text = jokeModel.joke
-        }
-    }
-}
-
 // MARK:- CLLocation
 extension WeatherViewController: CLLocationManagerDelegate {
     
@@ -155,12 +167,12 @@ extension WeatherViewController: CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
     
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
-            weatherManager.fetchWeather(lat, lon)
+            
+            updateLocalWeather(lat: lat, lon: lon)
         }
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
