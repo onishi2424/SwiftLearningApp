@@ -114,6 +114,10 @@ extension WeatherViewController: UITextFieldDelegate {
     
         func updateLocalWeather(lat: Double, lon: Double) {
             ModelService.shared.localModel.callLocal(lat: lat, lon: lon) { result, error in
+                if error != nil || result == nil {
+                    return
+                }
+                
                 self.temperatureLabel.text = result!.temperatureString
                 self.cityLabel.text = result!.cityName
                 if let conditionName = result!.conditionName {
