@@ -18,18 +18,18 @@ protocol Joke2ModelDelegate {
 
 class Joke2Model: Joke2ModelProtocol {
     
-    private var Joke2Service: Joke2ServiceProtocol
-    var Joke2: Joke2Entity?
+    private var joke2Service: Joke2ServiceProtocol
+    var joke2: Joke2Entity?
     
     required init(service: Joke2ServiceProtocol) {
-        self.Joke2Service = service
+        self.joke2Service = service
     }
     
     func callJoke2(completed: @escaping (Joke2Entity?, ErrorCode?) -> Void) {
         let param = Joke2Request.init()
-        Joke2Service.callJoke2(param: param, completed:  { (Joke2Entity, error) in
-            self.Joke2 = Joke2Entity
-            completed(Joke2Entity, error)
+        joke2Service.callJoke2(param: param, completed:  { (joke2Entity, error) in
+            self.joke2 = joke2Entity
+            completed(joke2Entity, error)
         })
     }
 
