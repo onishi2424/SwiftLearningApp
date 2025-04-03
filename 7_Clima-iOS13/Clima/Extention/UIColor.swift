@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    static let navigationHeaderColor = UIColor.init(named: "NavigationHeaderColor")!
+//    static let navigationHeaderColor = UIColor.init(named: "NavigationHeaderColor")!
 }

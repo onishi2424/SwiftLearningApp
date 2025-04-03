@@ -42,6 +42,7 @@
 		74C3EAD32D9523C1007C1C9A /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3EAD22D9523C1007C1C9A /* CityModel.swift */; };
 		74C3EAD52D952F17007C1C9A /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3EAD42D952F17007C1C9A /* Dictionary.swift */; };
 		74C3EAD72D95336D007C1C9A /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C3EAD62D95336D007C1C9A /* ModelService.swift */; };
+		74C3EADA2D9E0E7C007C1C9A /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 74C3EAD92D9E0E7C007C1C9A /* RswiftLibrary */; };
 		7D64259624473AE800F1DD90 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64259524473AE800F1DD90 /* WeatherDataManager.swift */; };
 		7D6425982451AEA500F1DD90 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6425972451AEA500F1DD90 /* WeatherData.swift */; };
 		7DB97A2C24585AB800C3BB03 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB97A2B24585AB800C3BB03 /* WeatherModel.swift */; };
@@ -116,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06B265D308227ADA288CD202 /* Pods_Clima.framework in Frameworks */,
+				74C3EADA2D9E0E7C007C1C9A /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +247,17 @@
 			path = response;
 			sourceTree = "<group>";
 		};
+		74C3EAEE2D9E1C85007C1C9A /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA27B9231BBFB300365194 /* Assets.xcassets */,
+				ADAA27BB231BBFB300365194 /* LaunchScreen.storyboard */,
+				ADAA27C5231BC02B00365194 /* dark_background.pdf */,
+				ADAA27C4231BC02B00365194 /* light_background.pdf */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
 		ADAA27A4231BBFAF00365194 = {
 			isa = PBXGroup;
 			children = (
@@ -278,11 +291,8 @@
 				ADAA27CA231BC3FA00365194 /* Model */,
 				ADAA27C9231BC3F200365194 /* View */,
 				ADAA27C8231BC3E500365194 /* Controller */,
-				ADAA27B9231BBFB300365194 /* Assets.xcassets */,
-				ADAA27BB231BBFB300365194 /* LaunchScreen.storyboard */,
+				74C3EAEE2D9E1C85007C1C9A /* Resouces */,
 				ADAA27BE231BBFB300365194 /* Info.plist */,
-				ADAA27C5231BC02B00365194 /* dark_background.pdf */,
-				ADAA27C4231BC02B00365194 /* light_background.pdf */,
 			);
 			path = Clima;
 			sourceTree = "<group>";
@@ -347,6 +357,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				74C3EAE02D9E19E8007C1C9A /* PBXTargetDependency */,
 			);
 			name = Clima;
 			productName = Clima;
@@ -377,6 +388,9 @@
 				Base,
 			);
 			mainGroup = ADAA27A4231BBFAF00365194;
+			packageReferences = (
+				74C3EAD82D9E0E7C007C1C9A /* XCRemoteSwiftPackageReference "R" */,
+			);
 			productRefGroup = ADAA27AE231BBFAF00365194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,6 +507,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74C3EAE02D9E19E8007C1C9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 74C3EADF2D9E19E8007C1C9A /* RswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ADAA27B6231BBFAF00365194 /* Main.storyboard */ = {
@@ -690,6 +711,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74C3EAD82D9E0E7C007C1C9A /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74C3EAD92D9E0E7C007C1C9A /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74C3EAD82D9E0E7C007C1C9A /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		74C3EADF2D9E19E8007C1C9A /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADAA27A5231BBFAF00365194 /* Project object */;
 }

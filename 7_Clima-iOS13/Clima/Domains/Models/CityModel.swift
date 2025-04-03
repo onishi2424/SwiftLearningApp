@@ -18,19 +18,19 @@ protocol CityModelDelegate {
 
 class CityModel: CityModelProtocol {
     
-    private var CityService: CityServiceProtocol
-    var City: CityEntity?
+    private var cityService: CityServiceProtocol
+    var city: CityEntity?
     
     required init(service: CityServiceProtocol) {
-        self.CityService = service
+        self.cityService = service
     }
     
     func callCity(q: String?, completed: @escaping (CityEntity?, ErrorCode?) -> Void) {
         let param = CityRequest.init(q: q!)
         
-        CityService.callCity(param: param, completed:  { (CityEntity, error) in
-            self.City = CityEntity
-            completed(CityEntity, error)
+        cityService.callCity(param: param, completed:  { (cityEntity, error) in
+            self.city = cityEntity
+            completed(cityEntity, error)
         })
     }
 

@@ -28,9 +28,9 @@ class LocalModel: LocalModelProtocol {
     func callLocal(lat: Double?, lon: Double?, completed: @escaping (LocalEntity?, ErrorCode?) -> Void) {
         let param = LocalRequest.init(lat: lat!, lon: lon!)
         
-        localService.callLocal(param: param, completed:  { (LocalEntity, error) in
-            self.local = LocalEntity
-            completed(LocalEntity, error)
+        localService.callLocal(param: param, completed:  { (localEntity, error) in
+            self.local = localEntity
+            completed(localEntity, error)
         })
     }
 

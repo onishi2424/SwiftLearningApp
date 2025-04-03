@@ -66,12 +66,17 @@ class WeatherViewController: UIViewController {
     
     @IBAction func tappedJokeButton(_ sender: UIButton) {
         ModelService.shared.jokeModel.callJoke2() { result, error in
-            if error != nil || result == nil {
+            if error != nil {
                 self.jokeLabel.text = ""
                 return
             }
             
-            self.jokeLabel.text = result!.joke
+            guard let result = result else {
+                self.jokeLabel.text = ""
+                return
+            }
+            
+            self.jokeLabel.text = result.joke
         }
     }
 }
@@ -90,49 +95,53 @@ extension WeatherViewController: UITextFieldDelegate {
     
         func updateCityWeather(cityName: String) {
             ModelService.shared.cityModel.callCity(q: cityName){ result, error in
-                if error != nil || result == nil {
+                if error != nil {
                     return
                 }
                 
-                self.temperatureLabel.text = result!.temperatureString
-                self.cityLabel.text = result!.cityName
-                if let conditionName = result!.conditionName {
+                guard let result = result else { return }
+                
+                self.temperatureLabel.text = result.temperatureString
+                self.cityLabel.text = result.cityName
+                if let conditionName = result.conditionName {
                     self.conditionImageView.image = UIImage(systemName: conditionName)
                 }
                 
-                if result!.cityName == "Tokyo" {
+                if result.cityName == "Tokyo" {
                     //Tokyoの場合、夕暮れの背景
-                    self.backgroundImageView.image = UIImage(named: "darkBackground")
+                    self.backgroundImageView.image = R.image.darkBackground()
                 } else {
                     //Tokyoでない場合、デフォルト背景
-                    self.backgroundImageView.image = UIImage(named: "background")
+                    self.backgroundImageView.image = R.image.background()
                 }
                 //コンソールにログを出力する
-                print("action: search, city: \(result!.cityName ?? "")")
+                print("action: search, city: \(result.cityName ?? "")")
             }
         }
     
         func updateLocalWeather(lat: Double, lon: Double) {
             ModelService.shared.localModel.callLocal(lat: lat, lon: lon) { result, error in
-                if error != nil || result == nil {
+                if error != nil {
                     return
                 }
                 
-                self.temperatureLabel.text = result!.temperatureString
-                self.cityLabel.text = result!.cityName
-                if let conditionName = result!.conditionName {
+                guard let result = result else { return }
+                
+                self.temperatureLabel.text = result.temperatureString
+                self.cityLabel.text = result.cityName
+                if let conditionName = result.conditionName {
                     self.conditionImageView.image = UIImage(systemName: conditionName)
                 }
                 
-                if result!.cityName == "Tokyo" {
+                if result.cityName == "Tokyo" {
                     //Tokyoの場合、夕暮れの背景
-                    self.backgroundImageView.image = UIImage(named: "darkBackground")
+                    self.backgroundImageView.image = R.image.darkBackground()
                 } else {
                     //Tokyoでない場合、デフォルト背景
-                    self.backgroundImageView.image = UIImage(named: "background")
+                    self.backgroundImageView.image = R.image.background()
                 }
                 //コンソールにログを出力する
-                print("action: search, city: \( result!.cityName ?? "")")
+                print("action: search, city: \( result.cityName ?? "")")
             }
         }
         
