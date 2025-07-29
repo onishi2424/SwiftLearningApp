@@ -23,13 +23,14 @@ class WeatherViewController: UIViewController {
     var weatherManager = WeatherDataManager()
     var jokeManeger = JokeDataManater()
     let locationManager = CLLocationManager()
+    private let viewModel = NewJokeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         weatherManager.delegate = self
-        jokeManeger.delegate = self
+//        jokeManeger.delegate = self
         searchField.delegate = self
         
         // 次の画面のBackボタンを「戻る」に変更
@@ -65,7 +66,27 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func tappedJokeButton(_ sender: UIButton) {
-        jokeManeger.performRequest(url: jokeManeger.baseURL)
+//        jokeManeger.performRequest(url: jokeManeger.baseURL)
+        Task { @MainActor in
+            do {
+                // 戻り値で受け取ってUIを直接更新
+                let response = try await viewModel.fetchJoke()
+                jokeLabel.text = response.joke
+                print(response.joke)
+            } catch {
+                jokeLabel.text = "エラー: \(error.localizedDescription)"
+                print("fetchJoke error:", error)
+            }
+        }
+        
+//        Task { @MainActor in
+//            await viewModel.fetchJoke()
+//            
+//            if let joke = viewModel.jokeText {
+//                jokeLabel.text = joke
+//                print(joke)
+//            }
+//        }
     }
 }
  
@@ -122,10 +143,10 @@ extension WeatherViewController: WeatherManagerDelegate {
             
             if weatherModel.cityName == "Tokyo" {
                 //Tokyoの場合、夕暮れの背景
-                backgroundImageView.image = UIImage(named: "darkBackground")
+                backgroundImageView.image = UIImage(resource: .darkBackground)
             } else {
                 //Tokyoでない場合、デフォルト背景
-                backgroundImageView.image = UIImage(named: "background")
+                backgroundImageView.image = UIImage(resource: .background)
             }
             
             //コンソールにログを出力する
@@ -138,13 +159,13 @@ extension WeatherViewController: WeatherManagerDelegate {
     }
 }
 
-extension WeatherViewController: JokeManagerDelegate {
-    func updateJoke(jokeModel: JokeModel){
-        DispatchQueue.main.async {
-            self.jokeLabel.text = jokeModel.joke
-        }
-    }
-}
+//extension WeatherViewController: JokeManagerDelegate {
+//    func updateJoke(jokeModel: JokeModel){
+//        DispatchQueue.main.async {
+//            self.jokeLabel.text = jokeModel.joke
+//        }
+//    }
+//}
 
 // MARK:- CLLocation
 extension WeatherViewController: CLLocationManagerDelegate {

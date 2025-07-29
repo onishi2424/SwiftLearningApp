@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		744407062E323B2700E38122 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 744407052E323B2700E38122 /* RswiftLibrary */; };
+		744407672E323E1500E38122 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 744407662E323E1500E38122 /* Alamofire */; };
+		7444076E2E323F8C00E38122 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 7444076D2E323F8C00E38122 /* Dependencies */; };
+		744407702E323F8C00E38122 /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 7444076F2E323F8C00E38122 /* DependenciesMacros */; };
+		744407722E323F8D00E38122 /* DependenciesTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 744407712E323F8D00E38122 /* DependenciesTestSupport */; };
+		744407742E32407900E38122 /* WeatherAPIContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744407732E32406B00E38122 /* WeatherAPIContants.swift */; };
+		744407762E32412400E38122 /* ResponseJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744407752E32411800E38122 /* ResponseJoke.swift */; };
+		744407782E3241C500E38122 /* JokeAPIConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744407772E3241C300E38122 /* JokeAPIConstans.swift */; };
+		7444077A2E32484900E38122 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744407792E32484400E38122 /* APIConstants.swift */; };
+		7444077D2E324AE100E38122 /* NewJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7444077C2E324AD900E38122 /* NewJokeViewModel.swift */; };
 		749DDF142D31017A00F18551 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF132D31017300F18551 /* APIService.swift */; };
 		749DDF1D2D3110FA00F18551 /* JokeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF1C2D3110EC00F18551 /* JokeDataManager.swift */; };
 		749DDF1F2D3111CC00F18551 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749DDF1E2D3111C300F18551 /* JokeModel.swift */; };
@@ -34,7 +44,31 @@
 		ADAA27CE231BC87F00365194 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27CD231BC87F00365194 /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7444074C2E323B8D00E38122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAA27A5231BBFAF00365194 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADAA27AC231BBFAF00365194;
+			remoteInfo = Clima;
+		};
+		7444075B2E323BA800E38122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAA27A5231BBFAF00365194 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADAA27AC231BBFAF00365194;
+			remoteInfo = Clima;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		744407482E323B8C00E38122 /* ClimaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		744407552E323BA800E38122 /* ClimaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		744407732E32406B00E38122 /* WeatherAPIContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIContants.swift; sourceTree = "<group>"; };
+		744407752E32411800E38122 /* ResponseJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseJoke.swift; sourceTree = "<group>"; };
+		744407772E3241C300E38122 /* JokeAPIConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAPIConstans.swift; sourceTree = "<group>"; };
+		744407792E32484400E38122 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		7444077C2E324AD900E38122 /* NewJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJokeViewModel.swift; sourceTree = "<group>"; };
 		749DDF132D31017300F18551 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		749DDF1C2D3110EC00F18551 /* JokeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDataManager.swift; sourceTree = "<group>"; };
 		749DDF1E2D3111C300F18551 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
@@ -64,17 +98,61 @@
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		744407492E323B8D00E38122 /* ClimaTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ClimaTests; sourceTree = "<group>"; };
+		744407562E323BA800E38122 /* ClimaUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ClimaUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		ADAA27AA231BBFAF00365194 /* Frameworks */ = {
+		744407452E323B8C00E38122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				744407722E323F8D00E38122 /* DependenciesTestSupport in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744407522E323BA800E38122 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADAA27AA231BBFAF00365194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7444076E2E323F8C00E38122 /* Dependencies in Frameworks */,
+				744407062E323B2700E38122 /* RswiftLibrary in Frameworks */,
+				744407702E323F8C00E38122 /* DependenciesMacros in Frameworks */,
+				744407672E323E1500E38122 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		744407682E323E3000E38122 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				7444077B2E324AC400E38122 /* Model */,
+				744407792E32484400E38122 /* APIConstants.swift */,
+				744407752E32411800E38122 /* ResponseJoke.swift */,
+				744407772E3241C300E38122 /* JokeAPIConstans.swift */,
+				744407732E32406B00E38122 /* WeatherAPIContants.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		7444077B2E324AC400E38122 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7444077C2E324AD900E38122 /* NewJokeViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		749DDF102D31014E00F18551 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +190,8 @@
 			children = (
 				ADAA27CD231BC87F00365194 /* README.md */,
 				ADAA27AF231BBFAF00365194 /* Clima */,
+				744407492E323B8D00E38122 /* ClimaTests */,
+				744407562E323BA800E38122 /* ClimaUITests */,
 				ADAA27AE231BBFAF00365194 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				ADAA27AD231BBFAF00365194 /* Clima.app */,
+				744407482E323B8C00E38122 /* ClimaTests.xctest */,
+				744407552E323BA800E38122 /* ClimaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +209,7 @@
 		ADAA27AF231BBFAF00365194 /* Clima */ = {
 			isa = PBXGroup;
 			children = (
+				744407682E323E3000E38122 /* APIClient */,
 				749DDF152D31024B00F18551 /* Struct */,
 				749DDF102D31014E00F18551 /* APIService */,
 				74AD0E2D2CD2564D000AC934 /* Extention */,
@@ -183,6 +266,53 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		744407472E323B8C00E38122 /* ClimaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7444074E2E323B8D00E38122 /* Build configuration list for PBXNativeTarget "ClimaTests" */;
+			buildPhases = (
+				744407442E323B8C00E38122 /* Sources */,
+				744407452E323B8C00E38122 /* Frameworks */,
+				744407462E323B8C00E38122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7444074D2E323B8D00E38122 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				744407492E323B8D00E38122 /* ClimaTests */,
+			);
+			name = ClimaTests;
+			packageProductDependencies = (
+				744407712E323F8D00E38122 /* DependenciesTestSupport */,
+			);
+			productName = ClimaTests;
+			productReference = 744407482E323B8C00E38122 /* ClimaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		744407542E323BA800E38122 /* ClimaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7444075D2E323BA800E38122 /* Build configuration list for PBXNativeTarget "ClimaUITests" */;
+			buildPhases = (
+				744407512E323BA800E38122 /* Sources */,
+				744407522E323BA800E38122 /* Frameworks */,
+				744407532E323BA800E38122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7444075C2E323BA800E38122 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				744407562E323BA800E38122 /* ClimaUITests */,
+			);
+			name = ClimaUITests;
+			packageProductDependencies = (
+			);
+			productName = ClimaUITests;
+			productReference = 744407552E323BA800E38122 /* ClimaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		ADAA27AC231BBFAF00365194 /* Clima */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADAA27C1231BBFB300365194 /* Build configuration list for PBXNativeTarget "Clima" */;
@@ -194,6 +324,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				744407612E323C7B00E38122 /* PBXTargetDependency */,
 			);
 			name = Clima;
 			productName = Clima;
@@ -206,10 +337,18 @@
 		ADAA27A5231BBFAF00365194 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "App Brewery";
 				TargetAttributes = {
+					744407472E323B8C00E38122 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = ADAA27AC231BBFAF00365194;
+					};
+					744407542E323BA800E38122 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = ADAA27AC231BBFAF00365194;
+					};
 					ADAA27AC231BBFAF00365194 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -224,16 +363,37 @@
 				Base,
 			);
 			mainGroup = ADAA27A4231BBFAF00365194;
+			packageReferences = (
+				744407042E323B2700E38122 /* XCRemoteSwiftPackageReference "R" */,
+				744407652E323E1500E38122 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7444076C2E323F8C00E38122 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+			);
 			productRefGroup = ADAA27AE231BBFAF00365194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				ADAA27AC231BBFAF00365194 /* Clima */,
+				744407472E323B8C00E38122 /* ClimaTests */,
+				744407542E323BA800E38122 /* ClimaUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		744407462E323B8C00E38122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744407532E323BA800E38122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADAA27AB231BBFAF00365194 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +413,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		744407442E323B8C00E38122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744407512E323BA800E38122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADAA27A9231BBFAF00365194 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,20 +437,42 @@
 				749DDF1F2D3111CC00F18551 /* JokeModel.swift in Sources */,
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
 				74AD0E282CC1D896000AC934 /* FavoriteViewController.swift in Sources */,
+				744407782E3241C500E38122 /* JokeAPIConstans.swift in Sources */,
 				74AD0E2F2CD2567F000AC934 /* UIColor.swift in Sources */,
 				749DDF212D3112EE00F18551 /* JokeData.swift in Sources */,
+				744407762E32412400E38122 /* ResponseJoke.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
 				749DDF2A2D31228300F18551 /* CityTableViewCell.swift in Sources */,
 				749DDF142D31017A00F18551 /* APIService.swift in Sources */,
+				744407742E32407900E38122 /* WeatherAPIContants.swift in Sources */,
+				7444077D2E324AE100E38122 /* NewJokeViewModel.swift in Sources */,
 				7DB97A2C24585AB800C3BB03 /* WeatherModel.swift in Sources */,
 				749DDF372D39336D00F18551 /* Struct.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,
 				74AD0E2C2CC1E040000AC934 /* ColorUtil.swift in Sources */,
 				749DDF1D2D3110FA00F18551 /* JokeDataManager.swift in Sources */,
+				7444077A2E32484900E38122 /* APIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7444074D2E323B8D00E38122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADAA27AC231BBFAF00365194 /* Clima */;
+			targetProxy = 7444074C2E323B8D00E38122 /* PBXContainerItemProxy */;
+		};
+		7444075C2E323BA800E38122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADAA27AC231BBFAF00365194 /* Clima */;
+			targetProxy = 7444075B2E323BA800E38122 /* PBXContainerItemProxy */;
+		};
+		744407612E323C7B00E38122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 744407602E323C7B00E38122 /* RswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ADAA27B6231BBFAF00365194 /* Main.storyboard */ = {
@@ -298,6 +494,106 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7444074F2E323B8D00E38122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VW892QYQ2A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-beginners.ClimaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clima.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Clima";
+			};
+			name = Debug;
+		};
+		744407502E323B8D00E38122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VW892QYQ2A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-beginners.ClimaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clima.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Clima";
+			};
+			name = Release;
+		};
+		7444075E2E323BA800E38122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VW892QYQ2A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-beginners.ClimaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clima;
+			};
+			name = Debug;
+		};
+		7444075F2E323BA800E38122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VW892QYQ2A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-beginners.ClimaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clima;
+			};
+			name = Release;
+		};
 		ADAA27BF231BBFB300365194 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -451,6 +747,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7444074E2E323B8D00E38122 /* Build configuration list for PBXNativeTarget "ClimaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7444074F2E323B8D00E38122 /* Debug */,
+				744407502E323B8D00E38122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7444075D2E323BA800E38122 /* Build configuration list for PBXNativeTarget "ClimaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7444075E2E323BA800E38122 /* Debug */,
+				7444075F2E323BA800E38122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ADAA27A8231BBFAF00365194 /* Build configuration list for PBXProject "Clima" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -470,6 +784,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		744407042E323B2700E38122 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
+		744407652E323E1500E38122 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		7444076C2E323F8C00E38122 /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		744407052E323B2700E38122 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 744407042E323B2700E38122 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		744407602E323C7B00E38122 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 744407042E323B2700E38122 /* XCRemoteSwiftPackageReference "R" */;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		744407662E323E1500E38122 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 744407652E323E1500E38122 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7444076D2E323F8C00E38122 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7444076C2E323F8C00E38122 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		7444076F2E323F8C00E38122 /* DependenciesMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7444076C2E323F8C00E38122 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = DependenciesMacros;
+		};
+		744407712E323F8D00E38122 /* DependenciesTestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7444076C2E323F8C00E38122 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = DependenciesTestSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADAA27A5231BBFAF00365194 /* Project object */;
 }

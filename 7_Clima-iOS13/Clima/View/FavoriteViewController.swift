@@ -43,7 +43,7 @@ class FavoriteViewController: UIViewController {
         self.navigationItem.title = "都市一覧"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         self.navigationItem.hidesBackButton = false
-        ColorUtil.changeNavigationBarColor(.navigationHeaderColor)
+        ColorUtil.changeNavigationBarColor(R.color.navigationHeaderColor()!)
     }
 }
 
